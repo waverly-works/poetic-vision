@@ -819,8 +819,8 @@ new p5(function(p) {
   ];
   const TIPS = [4, 8, 12, 16, 20];
 
-  // MediaPipe native API gives pixel coords in VIDEO space.
-  // Canvas draws video mirrored, so flip x.
+  // MediaPipe native API gives pixel coords in VIDEO space. It's safe.... lol 
+  // Canvas draws video mirrored, so I flip x.
   function mirrorPt(lm) {
     const vw = video.elt.videoWidth  || W;
     const vh = video.elt.videoHeight || H;
@@ -1003,8 +1003,8 @@ p.circle(lEar.x, lEar.y, 4);
     p.fill(handPreds.length>0 ? p.color(56,220,180) : p.color(100,100,120));
     p.noStroke(); p.textFont('monospace'); p.textSize(10);
     p.fill(faces.length > 0 ? p.color(192,132,252) : p.color(100,100,120));
-    p.text('faces: ' + faces.length, 10, H-24);
-    p.text('hands: '+handPreds.length, 10, H-10);
+    p.text('faces: ' + faces.length, 45, H-24);
+    p.text('hands: '+handPreds.length, 45, H-10);
 
     // ── hand overlay ──
     // Native MediaPipe normalised landmarks: x/y are 0-1 fractions of VIDEO size
